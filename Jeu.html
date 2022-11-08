@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My collection</title>
+		<style>
+
+			/* --- Commons --- */
+			body{
+				background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+			}
+
+			/* --- Menu --- */
+			header{
+				display: flex;
+				justify-content: space-around;
+				margin: 10px auto;
+				padding: 20px;
+				flex-wrap: wrap;
+				font-size: 1.6em;
+				font-family: 'Arial';
+			}
+
+			.STous{
+				padding: 10px;
+				background: linear-gradient(#339CFF, white);
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+
+			.SCarreau{
+				padding: 10px;
+				background: linear-gradient(yellow, white);
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+
+			.SCoeur{
+				padding: 10px;
+				background: linear-gradient(red, white);
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+
+			.SPique{
+				padding: 10px;
+				background: linear-gradient(green, white);
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+
+			.STrefle{
+				padding: 10px;
+				background: linear-gradient(purple, white);
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+
+			/* --- Content --- */
+			.conteneur{
+				display: flex;
+				width: 800px;
+				justify-content: space-around;
+				margin: 10px auto;
+				padding: 20px;
+				flex-wrap: wrap;
+				font-size: 1.6em;
+				font-family: 'Arial';
+				padding: 10px;
+				background: #339CFF;
+				border-radius: 10px;
+				box-shadow: 2px 2px 2px 3px gray;
+			}
+			
+			.conteneur:hover{
+				cursor: pointer;
+			}
+			
+			.conteneur:active{
+				opacity: 0.7;
+			}
+			
+			.conteneur img{
+				width: 150px;
+				margin: 20px;
+			}
+		</style>
+	</head>
+
+	<header>
+		<div id="Tous" class="STous" onClick="tri('Tous')">Tous</div>
+				
+		<div id="Ca" class="SCarreau" onClick="tri('Ca')">Carreau </div>
+				
+		<div id="Co" class="SCoeur" onClick="tri('Co')">Cœur</div>
+
+		<div id="Pi" class="SPique" onClick="tri('Pi')">Pique</div>
+
+		<div id="Tr" class="STrefle" onClick="tri('Tr')">Trèfle</div>
+	</header>
+
+	<body>		
+		<div class="conteneur">
+			<img src="img/as carreaux.JPG" alt="">
+			<img src="img/as coeur.JPG" alt="">
+			<img src="img/as pique.JPG" alt="">
+			<img src="img/as trefle.JPG" alt="">
+			<img src="img/roi carreaux.JPG" alt="">
+			<img src="img/roi coeur.JPG" alt="">
+			<img src="img/roi pique.JPG" alt="">
+			<img src="img/roi trefle.JPG" alt=""> 
+			<img src="img/dame carreaux.JPG" alt="">
+			<img src="img/dame coeur.JPG" alt="">
+			<img src="img/dame pique.JPG" alt="">
+			<img src="img/dame trefle.JPG" alt="">
+			<img src="img/vallet carreaux.JPG" alt="">
+			<img src="img/vallet coeur.JPG" alt="">
+			<img src="img/vallet pique.JPG" alt="">
+			<img src="img/vallet trefle.JPG" alt="">
+		</div>
+		
+		<script>
+			let listecartes = document.getElementsByTagName("img");
+			let listecouleurs = ["Ca" , "Co" , "Pi" , "Tr" ,
+								"Ca" , "Co" , "Pi" , "Tr" ,
+								"Ca" , "Co" , "Pi" , "Tr" ,
+								"Ca" , "Co" , "Pi" , "Tr"];
+								
+			function tri(couleur)
+			{
+				for (let i=0 ; i<listecartes.length ; i++)
+				{
+					if (couleur == "Tous" || listecouleurs[i]==couleur)
+					{
+						listecartes[i].hidden = false; 
+					}
+					else
+					{
+						listecartes[i].hidden = true;
+					}
+				}
+				
+				let element = document.getElementsByClassName('conteneur')[0];
+				if(couleur == "Tous")
+				{
+					element.style.backgroundColor = '#339CFF';
+				}
+				if(couleur == "Ca")
+				{
+					element.style.backgroundColor = 'yellow';
+				}
+				if(couleur == "Co")
+				{
+					element.style.backgroundColor = 'red';
+				}
+				if(couleur == "Pi")
+				{
+					element.style.backgroundColor = 'green';
+				}
+				if(couleur == "Tr")
+				{
+					element.style.backgroundColor = 'purple';
+				}
+			}       	
+	</script>
+	</body>
+</html>
